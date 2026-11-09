@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="You're invited to the engagement of Saikumar Gurram & Rishita Chowke — Wednesday, 18 November 2026, 11 AM to 3 PM, Swami Nityanand Hall, Sion, Mumbai.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Saikumar &amp; Rishita are getting engaged">
+<meta property="og:description" content="You're invited to the engagement of Saikumar Gurram & Rishita Chowke — Wednesday, 18 November 2026, 11 AM to 3 PM, Swami Nityanand Hall, Sion, Mumbai.">
+<meta property="og:image" content="temple_poster.jpg">
+<meta name="theme-color" content="#2a0710">
+<title>Saikumar &amp; Rishita Engagement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Marcellus&family=Tiro+Devanagari+Sanskrit&display=swap">
+<style>
+/* Layout: a scroll pilgrimage. The temple scene is pinned; scrolling walks the camera toward the
+   glowing sanctum door while each part of the invitation rises in over it, ending inside the light. */
+:root {
+  --maroon: #4a0e19;
+  --maroon-deep: #2a0710;
+  --kumkum: #9c1c24;
+  --marigold: #ef9a1d;
+  --gold: #d6a344;
+  --gold-soft: #f0d39a;
+  --sandal: #f7ead3;
+  --cream: #fff3dc;
+  --glass: rgba(36, 6, 13, .74);
+  --font-display: "Marcellus", "Trajan Pro", "Times New Roman", serif;
+  --font-script: "Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
+  --font-body: "EB Garamond", Garamond, "Times New Roman", serif;
+  --font-deva: "Tiro Devanagari Sanskrit", "Nirmala UI", "Mangal", serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--maroon-deep);
+  color: var(--sandal);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 400; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--marigold); outline-offset: 3px; border-radius: 4px; }
+
+/* ---------------------------------------------------------------- the journey */
+.journey { position: relative; }
+.stage {
+  position: relative;
+  width: min(100%, 560px);
+  margin: 0 auto;
+  aspect-ratio: 9 / 16;
+  max-height: 100svh;
+  overflow: hidden;
+  background: var(--maroon-deep) url("temple_poster.jpg") center 75% / cover no-repeat;
+}
+.scene { position: absolute; inset: 0; transform-origin: 50% 75%; will-change: transform; }
+.scene video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 75%; display: block; }
+.glow { /* the sanctum light that swallows the frame at the end */
+  position: absolute; inset: 0; pointer-events: none; opacity: 0;
+  background: radial-gradient(60% 45% at 50% 60%, #ffe6ad 0%, #ffbf5e 40%, #e07a22 75%, #8a2a14 100%);
+}
+.shade { position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(42,7,16,0) 50%, rgba(42,7,16,.7) 75%, rgba(42,7,16,.92) 100%); }
+
+/* panels: in normal flow by default (reduced motion / no script), layered over the stage in scroll mode */
+.panels { display: grid; gap: 1.2rem; padding-block: 1.6rem 2.4rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  width: min(100%, 560px); margin: 0 auto; }
+.panel { text-align: center; display: grid; gap: .8rem; justify-items: center; }
+.card {
+  width: 100%; max-width: 30rem;
+  background: var(--glass); border: 1px solid rgba(240,211,154,.45);
+  border-radius: 20px; padding: clamp(1.3rem, 5vw, 1.9rem) clamp(1.1rem, 5vw, 1.7rem);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  display: grid; gap: .8rem; justify-items: center; text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+.scrolly .journey { height: 820vh; height: 820svh; }
+.scrolly .stage { position: sticky; top: 0; height: 100vh; height: 100svh; max-height: none; aspect-ratio: auto; width: min(100%, calc(100svh * 9 / 16)); }
+.scrolly .panels { position: absolute; inset: 0; padding: 0; width: auto; display: block; pointer-events: none; }
+.scrolly .panel {
+  position: absolute; left: 0; right: 0; top: 50%;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  opacity: 0; transform: translateY(-50%); pointer-events: none;
+}
+.scrolly .panel.on { pointer-events: auto; }
+.scrolly .panel.hero { top: auto; bottom: 0; transform: none; padding-bottom: clamp(26px, 6vh, 56px); }
+
+/* hero */
+.invocation { font-family: var(--font-deva); color: var(--gold-soft); font-size: 1.05rem; }
+.eyebrow { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .22em; font-size: .78rem; color: var(--gold-soft); }
+.names { font-family: var(--font-script); font-weight: 500; font-size: clamp(2.9rem, 12.5vw, 4.2rem); line-height: 1.05; letter-spacing: -.01em; color: var(--cream); text-shadow: 0 2px 18px rgba(239,154,29,.35); }
+.amp { color: var(--gold); font-style: italic; }
+.date-line { font-family: var(--font-display); letter-spacing: .3em; font-size: 1.05rem; color: var(--gold-soft); }
+.hint { display: grid; justify-items: center; gap: .2rem; margin-top: .4rem; font-family: var(--font-display); letter-spacing: .2em; text-transform: uppercase; font-size: .7rem; color: var(--gold-soft); }
+.hint svg { width: 18px; height: 18px; }
+@media (prefers-reduced-motion: no-preference) { .hint svg { animation: bob 1.6s ease-in-out infinite; } }
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+.no-scrolly .hint { display: none; }
+
+/* shared type */
+.label { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .24em; font-size: .78rem; color: var(--gold-soft); }
+.h2 { font-family: var(--font-display); font-size: clamp(1.7rem, 6.6vw, 2.3rem); line-height: 1.15; letter-spacing: .04em; color: var(--cream); }
+.lede { font-size: 1.12rem; color: var(--sandal); max-width: 26rem; }
+.ornament { width: 120px; height: 18px; display: block; color: var(--gold); }
+
+/* couple */
+.couple { display: grid; grid-template-columns: 1fr auto 1fr; gap: .6rem; align-items: center; width: 100%; }
+.person { display: grid; gap: .35rem; justify-items: center; min-width: 0; }
+.medallion {
+  width: clamp(76px, 22vw, 96px); aspect-ratio: 1; max-width: 100%; border-radius: 50%;
+  display: grid; place-items: center;
+  background: radial-gradient(circle at 50% 40%, #fff7e6, #ecd6b2);
+  border: 2px solid var(--gold); box-shadow: 0 0 0 5px rgba(36,6,13,.8), 0 0 0 6px rgba(214,163,68,.6);
+  font-family: var(--font-script); font-style: italic; font-weight: 500; font-size: clamp(2.4rem, 8.5vw, 3.1rem); color: var(--kumkum);
+}
+.who { font-family: var(--font-display); letter-spacing: .06em; font-size: 1.02rem; color: var(--cream); }
+.role { font-style: italic; color: var(--gold-soft); font-size: .95rem; }
+.joiner { font-family: var(--font-script); font-style: italic; font-size: 2.4rem; color: var(--gold); }
+
+/* countdown */
+.count { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; width: 100%; }
+.unit { border: 1px solid rgba(240,211,154,.45); border-radius: 10px; padding-block: .7rem .5rem; display: grid; gap: .1rem; }
+.unit b { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.6rem, 7vw, 2.1rem); color: var(--cream); font-variant-numeric: tabular-nums; }
+.unit span { font-family: var(--font-display); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-soft); }
+.note { font-style: italic; color: var(--gold-soft); font-size: .98rem; min-height: 1.4em; }
+
+/* gathering */
+.when { display: grid; gap: .1rem; padding-block: .6rem; width: 100%; border-block: 1px solid rgba(240,211,154,.3); }
+.when .day { font-family: var(--font-display); letter-spacing: .08em; font-size: 1.15rem; color: var(--cream); }
+.when .time { font-style: italic; color: var(--gold-soft); }
+.events { list-style: none; margin: 0; padding: 0; display: grid; width: 100%; }
+.events li { display: grid; grid-template-columns: 2.6rem 1fr; gap: .9rem; align-items: center; padding-block: .7rem; text-align: left; border-bottom: 1px dashed rgba(240,211,154,.25); }
+.events li:last-child { border-bottom: 0; }
+.num { width: 2.6rem; height: 2.6rem; border-radius: 50%; display: grid; place-items: center; background: var(--kumkum); color: var(--cream); font-family: var(--font-display); font-size: 1.15rem; box-shadow: 0 0 0 1px var(--gold); }
+.ev { min-width: 0; display: grid; gap: .05rem; }
+.ev h3 { font-family: var(--font-display); font-size: 1.12rem; letter-spacing: .04em; color: var(--cream); }
+.ev p { color: var(--gold-soft); font-size: .96rem; font-style: italic; }
+
+/* venue + invitation */
+.venue-name { font-family: var(--font-display); font-size: clamp(1.5rem, 6vw, 1.9rem); color: var(--cream); letter-spacing: .04em; }
+.address { color: var(--sandal); user-select: all; }
+.btn-row { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; }
+.btn {
+  font: inherit; font-family: var(--font-display); letter-spacing: .12em; text-transform: uppercase; font-size: .76rem;
+  text-decoration: none; cursor: pointer; border-radius: 999px; padding: .72rem 1.1rem;
+  display: inline-flex; align-items: center; gap: .5rem;
+}
+.btn.solid { background: var(--gold-soft); color: var(--maroon-deep); border: 1px solid var(--gold-soft); }
+.btn.solid:hover { background: #fff0c8; }
+.btn.ghost { background: transparent; color: var(--gold-soft); border: 1px solid rgba(240,211,154,.6); }
+.btn.ghost:hover { background: rgba(240,211,154,.12); }
+.invite .card { background: rgba(255, 243, 220, .9); border-color: rgba(156,28,36,.35); color: #3a0c14; }
+.invite .invocation { color: var(--kumkum); }
+.invite .h2 { color: var(--kumkum); text-transform: uppercase; letter-spacing: .14em; font-size: clamp(2rem, 8.5vw, 2.7rem); }
+.invite .lede { color: #5a2a25; }
+.invite .names { color: #6d1219; text-shadow: none; font-size: clamp(2.6rem, 11vw, 3.6rem); }
+.invite .date-line { color: var(--kumkum); }
+.invite .sign { font-style: italic; color: #6b3a33; }
+.invite .btn.solid { background: var(--kumkum); border-color: var(--kumkum); color: var(--cream); }
+.invite .btn.ghost { color: var(--kumkum); border-color: rgba(156,28,36,.5); }
+.invite .btn.ghost:hover { background: rgba(156,28,36,.08); }
+
+/* progress beads */
+.beads { position: fixed; z-index: 15; right: calc(10px + env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%); display: grid; gap: 8px; }
+.beads i { width: 7px; height: 7px; border-radius: 50%; background: rgba(240,211,154,.35); display: block; transition: background .3s, transform .3s; }
+.beads i.on { background: var(--marigold); transform: scale(1.35); }
+.no-scrolly .beads { display: none; }
+
+/* music */
+.music-fab {
+  position: fixed; z-index: 20;
+  top: calc(12px + env(safe-area-inset-top, 0px)); right: calc(12px + env(safe-area-inset-right, 0px));
+  height: 40px; padding: 0 14px; border-radius: 999px;
+  border: 1px solid rgba(240,211,154,.6); background: rgba(36,6,13,.72); color: var(--gold-soft);
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer; backdrop-filter: blur(4px);
+  font: inherit; font-family: var(--font-display); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+}
+.bars { display: inline-flex; gap: 2px; align-items: flex-end; height: 14px; }
+.bars i { display: block; width: 3px; height: 50%; background: currentColor; border-radius: 1px; transform-origin: bottom; }
+.bars i:nth-child(2) { height: 85%; } .bars i:nth-child(3) { height: 65%; }
+.music-fab[aria-pressed="true"] .bars i { animation: eq 1s ease-in-out infinite; }
+.music-fab[aria-pressed="true"] .bars i:nth-child(2) { animation-delay: .2s; }
+.music-fab[aria-pressed="true"] .bars i:nth-child(3) { animation-delay: .4s; }
+@keyframes eq { 0%,100% { transform: scaleY(.5); } 50% { transform: scaleY(1.15); } }
+
+.footer { text-align: center; padding-block: 1.4rem 2rem; color: rgba(240,211,154,.7); font-size: .95rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+#petals { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
+@media (prefers-reduced-motion: reduce) { #petals { display: none; } .music-fab .bars i { animation: none !important; } }
+</style>
+</head>
+<body>
+
+<canvas id="petals" aria-hidden="true"></canvas>
+<audio id="music" src="music.mp3" loop preload="none"></audio>
+<button class="music-fab" id="musicFab" type="button" aria-pressed="false">
+  <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span id="musicLabel">Music</span>
+</button>
+<nav class="beads" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></nav>
+
+<main class="journey" id="journey">
+  <div class="stage" id="stage">
+    <div class="scene" id="scene">
+      <video autoplay muted loop playsinline poster="temple_poster.jpg" aria-hidden="true">
+        <source src="temple.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="shade" id="shade"></div>
+    <div class="glow" id="glow"></div>
+
+    <div class="panels" id="panels">
+      <!-- 1: arrival -->
+      <section class="panel hero" data-range="0,0.12" aria-label="Saikumar and Rishita are getting engaged">
+        <p class="invocation" lang="sa">॥ श्री गणेशाय नमः ॥</p>
+        <p class="eyebrow">With the blessings of our families</p>
+        <h1 class="names">Saikumar <span class="amp">&amp;</span> Rishita</h1>
+        <p class="eyebrow">are getting engaged</p>
+        <p class="date-line">18 · 11 · 2026</p>
+        <div class="hint"><span>Scroll to enter the temple</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></div>
+      </section>
+
+      <!-- 2: blessing + couple -->
+      <section class="panel" data-range="0.15,0.31" aria-labelledby="t-bless">
+        <div class="card">
+          <p class="label">Shubh Sagai</p>
+          <h2 class="h2" id="t-bless">Two families, one happy beginning</h2>
+          <svg class="ornament" viewBox="0 0 120 18" aria-hidden="true"><path d="M2 9h44M74 9h44" stroke="currentColor" stroke-width="1.2"/><path d="M60 2l7 7-7 7-7-7z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="60" cy="9" r="2" fill="#ef9a1d"/></svg>
+          <p class="lede">With the blessings of the Almighty and the love of our elders, we invite you to bless Saikumar and Rishita as they exchange rings and begin their journey together.</p>
+          <div class="couple">
+            <div class="person"><div class="medallion" aria-hidden="true">S</div><p class="who">Saikumar Gurram</p><p class="role">The groom</p></div>
+            <span class="joiner" aria-hidden="true">&amp;</span>
+            <div class="person"><div class="medallion" aria-hidden="true">R</div><p class="who">Rishita Chowke</p><p class="role">The bride</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3: countdown -->
+      <section class="panel" data-range="0.33,0.46" aria-labelledby="t-count">
+        <div class="card">
+          <p class="label" id="t-count">Counting down to the auspicious day</p>
+          <div class="count" role="timer" aria-live="off">
+            <div class="unit"><b id="cd-d">0</b><span>Days</span></div>
+            <div class="unit"><b id="cd-h">00</b><span>Hours</span></div>
+            <div class="unit"><b id="cd-m">00</b><span>Minutes</span></div>
+            <div class="unit"><b id="cd-s">00</b><span>Seconds</span></div>
+          </div>
+          <p class="note" id="cd-note">Wednesday, 18 November 2026 at 11 AM</p>
+        </div>
+      </section>
+
+      <!-- 4: the gathering -->
+      <section class="panel" data-range="0.48,0.64" aria-labelledby="t-gather">
+        <div class="card">
+          <p class="label">The gathering</p>
+          <h2 class="h2" id="t-gather">Order of the day</h2>
+          <div class="when"><p class="day">Wednesday, 18 November 2026</p><p class="time">11 AM to 3 PM</p></div>
+          <ol class="events">
+            <li><span class="num" aria-hidden="true">1</span><div class="ev"><h3>Groom &amp; Bride Puja</h3><p>Prayers for a blessed beginning</p></div></li>
+            <li><span class="num" aria-hidden="true">2</span><div class="ev"><h3>Ring Ceremony</h3><p>Saikumar and Rishita exchange rings</p></div></li>
+            <li><span class="num" aria-hidden="true">3</span><div class="ev"><h3>Cake Cutting</h3><p>A sweet start to the celebration</p></div></li>
+            <li><span class="num" aria-hidden="true">4</span><div class="ev"><h3>Lunch</h3><p>Please stay and dine with us</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 5: venue -->
+      <section class="panel" data-range="0.66,0.79" aria-labelledby="t-venue">
+        <div class="card">
+          <p class="label">The venue</p>
+          <h2 class="venue-name" id="t-venue">Swami Nityanand Hall</h2>
+          <p class="address" id="address">Swami Nityanand Hall, Sion, Mumbai – 400022</p>
+          <div class="btn-row">
+            <a class="btn solid" href="https://www.google.com/maps/search/?api=1&amp;query=Swami%20Nityanand%20Hall%2C%20Sion%2C%20Mumbai%20400022" target="_blank" rel="noopener">Open in Maps</a>
+            <button class="btn ghost" id="copyAddr" type="button">Copy address</button>
+          </div>
+          <p class="note" id="copyNote" role="status"></p>
+        </div>
+      </section>
+
+      <!-- 6: invitation, inside the sanctum light -->
+      <section class="panel invite" data-range="0.86,1.01" aria-labelledby="t-invite">
+        <div class="card">
+          <p class="invocation" lang="sa">॥ शुभ विवाह निश्चय ॥</p>
+          <h2 class="h2" id="t-invite">Invitation</h2>
+          <p class="lede">Your presence and blessings will make this day complete. We warmly invite you and your family to the engagement of</p>
+          <p class="names">Saikumar <span class="amp">&amp;</span> Rishita</p>
+          <p class="date-line">18 · 11 · 2026 &nbsp;|&nbsp; 11 AM – 3 PM</p>
+          <p class="lede">Swami Nityanand Hall, Sion, Mumbai</p>
+          <p class="sign">With love, the Gurram and Chowke families</p>
+          <div class="btn-row">
+            <a class="btn solid" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Engagement%20of%20Saikumar%20%26%20Rishita&amp;dates=20261118T053000Z%2F20261118T093000Z&amp;location=Swami%20Nityanand%20Hall%2C%20Sion%2C%20Mumbai%20400022&amp;details=Groom%20%26%20Bride%20Puja%2C%20Ring%20Ceremony%2C%20Cake%20Cutting%2C%20Lunch">Add to calendar</a>
+            <a class="btn ghost" id="waShare" target="_blank" rel="noopener" href="https://wa.me/?text=You%27re%20invited%20to%20the%20engagement%20of%20Saikumar%20%26%20Rishita%20%E2%80%94%2018%20Nov%202026%2C%2011%20AM%2C%20Swami%20Nityanand%20Hall%2C%20Sion%2C%20Mumbai">Share on WhatsApp</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="footer">Saikumar &amp; Rishita · 18 November 2026 · Mumbai</footer>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  root.classList.add(reduce ? 'no-scrolly' : 'scrolly');
+
+  // ---------------------------------------------------------------- scroll journey
+  const journey = document.getElementById('journey');
+  const scene = document.getElementById('scene');
+  const glow = document.getElementById('glow');
+  const shade = document.getElementById('shade');
+  const panels = [...document.querySelectorAll('.panel')].map(el => {
+    const [a, b] = el.dataset.range.split(',').map(Number);
+    return { el, a, b };
+  });
+  const beads = [...document.querySelectorAll('.beads i')];
+  const clamp = (x, lo = 0, hi = 1) => Math.min(hi, Math.max(lo, x));
+  const smooth = x => { x = clamp(x); return x * x * (3 - 2 * x); };
+  let ticking = false;
+
+  function update() {
+    ticking = false;
+    if (reduce) return;
+    const total = journey.offsetHeight - innerHeight;
+    const p = clamp((scrollY - journey.offsetTop) / Math.max(1, total));
+    // camera walks toward the sanctum door: slow at first, then through it
+    const z = 1 + 0.9 * smooth(p / 0.6) + 6.5 * Math.pow(smooth((p - 0.55) / 0.42), 2.2);
+    const lift = -6 * smooth(p / 0.6); // tilt the view slightly up the tower early on
+    scene.style.transform = `translateY(${lift}%) scale(${z.toFixed(4)})`;
+    glow.style.opacity = smooth((p - 0.78) / 0.12).toFixed(3);
+    shade.style.opacity = (1 - 0.6 * smooth((p - 0.1) / 0.2) * (1 - smooth((p - 0.8) / 0.1))).toFixed(3);
+    let active = 0;
+    panels.forEach((q, i) => {
+      const fin = smooth((p - q.a) / 0.035);
+      const fout = q.b > 1 ? 1 : 1 - smooth((p - (q.b - 0.035)) / 0.035);
+      const o = (i === 0 ? 1 - smooth((p - (q.b - 0.04)) / 0.04) : fin * fout);
+      q.el.style.opacity = o.toFixed(3);
+      const dy = (1 - fin) * 30 - (1 - fout) * 30;
+      q.el.style.transform = i === 0 ? `translateY(${(-p * 60).toFixed(1)}px)` : `translateY(calc(-50% + ${dy.toFixed(1)}px))`;
+      q.el.classList.toggle('on', o > 0.5);
+      if (p >= q.a - 0.02) active = i;
+    });
+    beads.forEach((b, i) => b.classList.toggle('on', i === active));
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  update();
+
+  // ---------------------------------------------------------------- music
+  const audio = document.getElementById('music');
+  const fab = document.getElementById('musicFab');
+  const label = document.getElementById('musicLabel');
+  fab.addEventListener('click', async () => {
+    if (audio.paused) {
+      try { audio.volume = 0.7; await audio.play(); fab.setAttribute('aria-pressed', 'true'); label.textContent = 'Pause'; }
+      catch (e) { fab.setAttribute('aria-pressed', 'false'); label.textContent = 'Music'; }
+    } else { audio.pause(); fab.setAttribute('aria-pressed', 'false'); label.textContent = 'Music'; }
+  });
+
+  // ---------------------------------------------------------------- countdown (India time)
+  const target = Date.parse('2026-11-18T11:00:00+05:30');
+  const el = { d: 'cd-d', h: 'cd-h', m: 'cd-m', s: 'cd-s' };
+  for (const k in el) el[k] = document.getElementById(el[k]);
+  const note = document.getElementById('cd-note');
+  function tick() {
+    const ms = target - Date.now();
+    if (ms <= 0) {
+      el.d.textContent = '0'; el.h.textContent = el.m.textContent = el.s.textContent = '00';
+      note.textContent = ms > -4 * 3600e3 ? 'The celebration is happening now' : 'Thank you for celebrating with us';
+      return;
+    }
+    const s = Math.floor(ms / 1000);
+    el.d.textContent = Math.floor(s / 86400);
+    el.h.textContent = String(Math.floor(s % 86400 / 3600)).padStart(2, '0');
+    el.m.textContent = String(Math.floor(s % 3600 / 60)).padStart(2, '0');
+    el.s.textContent = String(s % 60).padStart(2, '0');
+  }
+  tick(); setInterval(tick, 1000);
+
+  // ---------------------------------------------------------------- copy address
+  const addr = document.getElementById('address');
+  const copyNote = document.getElementById('copyNote');
+  document.getElementById('copyAddr').addEventListener('click', () => {
+    const fallback = () => {
+      const r = document.createRange(); r.selectNodeContents(addr);
+      const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      copyNote.textContent = 'Address selected. Use your phone’s Copy.';
+    };
+    try { navigator.clipboard.writeText(addr.textContent.trim()).then(() => { copyNote.textContent = 'Address copied'; }, fallback); }
+    catch (e) { fallback(); }
+  });
+
+  // ---------------------------------------------------------------- WhatsApp share carries this page's link
+  const wa = document.getElementById('waShare');
+  wa.addEventListener('click', () => {
+    try {
+      const msg = "You're invited to the engagement of Saikumar & Rishita — 18 Nov 2026, 11 AM, Swami Nityanand Hall, Sion, Mumbai. " + location.href.split('#')[0];
+      wa.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+    } catch (e) {}
+  });
+
+  // ---------------------------------------------------------------- marigold petals
+  if (reduce) return;
+  const cv = document.getElementById('petals');
+  const ctx = cv.getContext('2d');
+  let w = 0, h = 0;
+  function size() { const dpr = Math.min(2, devicePixelRatio || 1); w = cv.clientWidth; h = cv.clientHeight; cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+  size(); addEventListener('resize', size);
+  const colors = ['#ef9a1d', '#f7b733', '#e2452f', '#f0d39a'];
+  const petals = Array.from({ length: 16 }, () => ({
+    x: Math.random(), y: Math.random(), r: 4 + Math.random() * 5, v: 0.012 + Math.random() * 0.02,
+    sw: 10 + Math.random() * 24, ph: Math.random() * 6.28, rot: Math.random() * 6.28, vr: (Math.random() - .5) * 1.4,
+    c: colors[Math.floor(Math.random() * colors.length)]
+  }));
+  let last = performance.now();
+  (function frame(now) {
+    const dt = Math.min(0.05, (now - last) / 1000); last = now;
+    ctx.clearRect(0, 0, w, h);
+    for (const q of petals) {
+      q.y += q.v * dt * 3; q.rot += q.vr * dt; q.ph += dt;
+      if (q.y > 1.05) { q.y = -0.05; q.x = Math.random(); }
+      ctx.save(); ctx.translate(q.x * w + Math.sin(q.ph) * q.sw, q.y * h); ctx.rotate(q.rot);
+      ctx.fillStyle = q.c; ctx.globalAlpha = 0.85;
+      ctx.beginPath(); ctx.ellipse(0, 0, q.r, q.r * 0.55, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.restore();
+    }
+    requestAnimationFrame(frame);
+  })(last);
+})();
+</script>
+
+</body>
+</html>
